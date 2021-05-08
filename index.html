@@ -26,46 +26,93 @@
                 <header>
                     <h2>python introduction</h2>
                 </header>
-                <p></p>
-                <p></p>
-                <code></code>
-                <li></li>
+                <p>A computer is composed of these parts:</p>
+                <ul>
+                    <li>The Central Processing Unit (CPU) is the part built to ask: what next? If a computer is rated at 3.0 Gigahertz, it means the CPU will ask this question three billion times per second.</li>
+                    <li>The Main Memory stores information that the CPU needs in a hurry. It is nearly as fast as the CPU. The information stored in the main memory vanishes when the computer is turned off.</li>
+                    <li>The Secondary Memory stores information even when the computer is off, but is much slower than the main memory. Examples include disk drives or flash memory.</li>
+                    <li>Input and Output Devices are ways we interact with computers: screen, keyboard, mouse, mic, speaker…</li>
+                    <li>The Network Connection retrieves data over a network, a very slow place to store and retrieve data that might not always be up. It’s is a slower and at times unreliable form of Secondary Memory.</li>
+                </ul>
+                <p>A programmer writes programs to orchestrate these resources to solve problems and analyze data, telling the CPU to use the main memory, secondary memory, network, or the input/output devices.
+                    To do so, a propgramming language is used. Python has a set of reserved words :
+                </p>
+                <pre>
+                    <code>
+                        and del from None True as elif global nonlocal try assert else if not while break except import or with class False in pass yield continue finally is raise async def for lambda return await
+                    </code>
+                </pre>
             </section>
             <section class="main-section" id="variables_and_expressions">
                 <header>
                     <h2>variables and expressions</h2>
                 </header>
-                <p></p>
-                <p></p>
-                <code></code>
-                <li></li>
+                <p>Variable names must start with a letter or an underscore (but variable names starting with an underscore are usually used for another type of variables than we’re concerned with right now), they could contain letters, numbers and underscores and they’re case sensitive. 
+                    Unlike in JavaScript, python doesn’t have a specific keyword to declare a variable.</p>
+                <p>When you declare a variable, python knows automatically what type it is. Some operations are prohibited on some variable types, such as adding a number to a string (unlike JavaScript, python doesn’t convert the number to a string and concatenate them). The type() function returns a variable’s type: </p>
+                <pre>
+                    <code>
+                        x = 3
+                        type(x) &lt;# class ‘int’&gt;
+                    </code>
+                </pre>
             </section>
             <section class="main-section" id="conditional_execution">
                 <header>
                     <h2>conditional execution</h2>
                 </header>
-                <p></p>
-                <p></p>
-                <code></code>
-                <li></li>
+                <p>The if, elif, and else keywords let us build conditional structures. Here, the two dots following these keywords and the indentations after them are crucial for proper code execution, because, unlike JavaScript, curly braces don’t exist to limit the code inside each condition.</p>
+                <ul>
+                    <li>Comparison operators are used to make the conditional decisions: ==, &gt;=, &lt;=, &gt;, &lt;, and !=.  These ones are the same as in JavaScript. </li>
+                    <li>There are also strict comparison operators, is and is not (a bit like === and !== in JavaScript) that are stronger than the standard == and != , meaning that not only do they seek equality in value but also in data type. This way, 0 == 0.0 is True (same value), but 0 is 0.0 is False (different types: one is int and the other float).</li>
+                </ul>
+                <p>More advanced conditional structures exist: the try/except structure allows to try instructions that we anticipate to run badly, and offers an alternative if it does to avoiding a traceback.</p>
+                <pre>
+                    <code>
+                        hours = input(“Enter working hours: “)
+                        rate = input(“Enter rate: “)
+                        try:
+                            hours = float(hours)
+                            rate = float(rate)
+                        except:
+                            print(“Error, please enter numeric input”)
+                            quit()
+                        pay = hours * rate
+                        print(pay)
+                    </code>
+                </pre>
             </section>
             <section class="main-section" id="functions">
                 <header>
                     <h2>functions</h2>
                 </header>
-                <p></p>
-                <p></p>
-                <code></code>
-                <li></li>
+                <p>Whether we define it or it’s already built-in, a function is a bunch of reusable code that takes arguments as input, does some computation with it, and returns an output value. If we want to define a function ourselves, we use the def keyword. We call/invoke a function by its name (just like built-in functions).</p>
+                <p>We use the def keyword to create a function, followed by the function name and eventual parameters in parentheses. The body of the function is indented. This defines the functions but does not execute it, only stores it and remembers it for future calls.</p>
+                <pre>
+                    <code>
+                        def greet(lang):
+	                        if lang == ”de”
+		                        return “Guten Tag!”
+	                        elif lang == “fr”
+		                        return “Salut!”
+	                        else:
+		                        return “Hello!”
+                        print(greet(“fr”), “Jean-Michel”)
+                    </code>
+                </pre>
             </section>
             <section class="main-section" id="strings">
                 <header>
                     <h2>strings</h2>
                 </header>
-                <p></p>
-                <p></p>
-                <code></code>
-                <li></li>
+                <p>Strings are a sequence of characters between quotes. We can concatenate strings using +, we cannot concatenate a string and a number, but we can convert a string to a number using the int() function if it contains numeric characters only. User input is always a string unless we convert it if possible.</p>
+                <p>We access a character in a string using its index between square brackets. Indexing is zero-based. It could be an expression that is computed.</p>
+                <pre>
+                    <code>
+                        string = “What do your elf-eyes see?”
+                        letter = string[1] # h
+                    </code>
+                </pre>
             </section>
         </main>
     </body>
